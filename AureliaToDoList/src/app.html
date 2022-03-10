@@ -1,0 +1,22 @@
+<template>
+  <div class="p-5 mx-auto col-lg-10 text-center p-3 mb-2 bg-light  text-dark">
+    <img class="col-lg-3" src="assets/logo.svg"> <img class="col-lg-3" src="assets/Bootstrap.png"></h1>
+    <h1 class="p-5 ">${heading}</h1>
+    <h1>${message}</h1>
+
+    <form submit.trigger="addTodo()">
+      <input class="list-group-numbered" type="text" value.bind="todoDescription">
+      <button class="mb-2 btn btn-success" type="submit">añadir</button>
+    </form>
+    <ul class=" list-group-numbered">
+      <li class="  display-4 list-group-item-dark active" aria-current="true" style="list-style: none;"
+        repeat.for="todo of todos">
+        <input class="form-check-input me-1" type="checkbox" checked.bind="todo.done">
+        <span>
+          ${todo.description}
+        </span>
+        <button type="button" class="btn btn-danger" click.trigger="removeTodo(todo)">eliminar</button>
+      </li>
+    </ul>
+  </div>
+</template>
